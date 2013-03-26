@@ -1,0 +1,18 @@
+{% extends "DiggerRecordbgBundle::layout.html.twig" %}
+{% block content %}
+	<div class="title">
+		<b>Категории</b>
+	</div>
+	
+	<div class="center_list" >
+	<ul>
+	  {% for item in items %}
+		<li class="{{ cycle(['odd', 'even'], 0) }}" >{{ item.info |e }}</li>
+	  {% else %}
+		<li><em>no user found</em></li>
+	  {% endfor %}
+	</ul>
+	</div>
+{% endblock %}
+
+

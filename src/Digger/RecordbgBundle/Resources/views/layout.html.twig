@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+		<meta name="verify-v1" content="yebpoTtkI00N0Mr5fsfZFueDzOVIcJzqXYwbknqFho4=" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{{ asset('bundles/diggerrecordbg/css/main.css') }}" type="text/css" media="all" />
+        <title>{% block title %}Вашето място за похвали.{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('/bundles/diggerrecordbg/images/logo.ico') }}" />
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+		_uacct = "UA-3137462-1";
+		urchinTracker();
+		</script>
+			<style type="text/css">
+		@import url(http://www.google.com/cse/api/branding.css);
+		</style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                 <div class="topmenu_wrap" >
+                         <div class="topmenu" >
+                                {% render "DiggerRecordbgBundle:Default:topmenu" with { 'leftMenu': NULL }  %} 
+                         </div>
+                         <div class="topmenu_rigth">
+                         </div>
+                 </div>
+             </div>
+
+            {% if app.session.flash('notice') %}
+                <div class="flash-message">
+                    <em>Notice</em>: {{ app.session.flash('notice') }}
+                </div>
+            {% endif %}
+
+            <div class="clear"></div>
+         	
+            {% render "DiggerRecordbgBundle:Default:leftside" with { 'leftMenu': NULL }  %}
+            
+	
+			<div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <div class="rightColumn">
+              {#% render "DiggerRecordbgBundle:Default:new" %#}
+           </div>
+			<div class="clear"></div>
+          
+
+            {% if code is defined %}
+                <h2>Code behind this page</h2>
+                <div class="symfony-content">{{ code|raw }}</div>
+            {% endif %}
+	
+	    <div id="footer" class="p10" >
+                    <a target="_blank" href="http://www.gamesbg.com">Игри</a>
+                    :: <a target="_blank" href="http://www.brigadiri.com">Студентски бригади</a>
+                    :: <a href="http://99mp3bg.net" title="Безплатна mp3 Музика" target="_blank">Безплатна mp3 Музика</a>
+                    :: <a href="http://tiaitoi.net" target="_blank" title="Тя и Той -Онлайн списание за Мъжа и жената!!">Тя и Той .нет</a>
+                    :: <a href="http://igriigri.com" target="_blank" title="Забавни флаш игри за деца!!">игри</a>
+                    :: <a href="http://prodavach.com" target="_blank" title="Безплатни малки обяви!">обяви</a>
+             </div>
+			 
+           {# {% block content_header %}
+                <ul id="menu">
+                    {% block content_header_more %}
+                        <li><a href="{{ path('_demo') }}">Вашето място за похвали.</a></li>
+
+                    {% endblock %}
+                </ul> }
+
+            {% endblock %}  #}
+			 
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<ul>
+  <li     {% if '/' ==   app.request.getPathInfo() %} class="selected"  {% endif %}>
+		  <a href="{{ url('homepage') }}" >Хвалби</a>
+  </li>
+  <li>
+		  <a href="{{ url('homepage') }}"  >Похвали се</a>
+  </li>
+  <li {% if '/rollmodel' ==   app.request.getPathInfo() %} class="selected"  {% endif %}>
+		  <a href="{{ url('rollmodel') }}"  >Личности</a>
+  </li>
+  <li  {% if '/records' ==   app.request.getPathInfo() %} class="selected"  {% endif %}>
+		  <a href="{{ url('records') }}"  >Рекорди</a>
+  </li>
+  <li   {% if '/feedback' ==   app.request.getPathInfo() %} class="selected"  {% endif %}>
+		  <a href="{{ url('feedback') }}" >Връзка с нас</a>
+  </li>
+  <li  {% if '/rules' ==   app.request.getPathInfo() %} class="selected"  {% endif %}>
+		  <a href="{{ url('_rules') }}"  >Правила и условия</a>
+  </li>
+</ul> 
+
+ <script type="text/javascript"><!--
+google_ad_client = "pub-3239515341947934";
+/* 468x15, created 3/27/10 */
+google_ad_slot = "7763962809";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+							

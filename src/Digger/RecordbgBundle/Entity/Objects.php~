@@ -1,0 +1,84 @@
+<?php
+
+namespace Digger\RecordbgBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Digger\RecordbgBundle\Entity\Objects
+ *
+ * @ORM\Table(name="objects")
+ * @ORM\Entity
+ */
+class Objects
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $title
+     *
+     * @ORM\Column(name="title", type="string", length=150, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var string $info
+     *
+     * @ORM\Column(name="info", type="text", nullable=true)
+     */
+    private $info;
+
+    /**
+     * @var integer $hits
+     *
+     * @ORM\Column(name="hits", type="integer", nullable=true)
+     */
+    private $hits;
+
+    /**
+     * @var \DateTime $created
+     *
+     * @ORM\Column(name="created", type="datetime", nullable=true)
+     */
+    private $created;
+
+    /**
+     * @var string $ip
+     *
+     * @ORM\Column(name="ip", type="string", length=20, nullable=true)
+     */
+    private $ip;
+
+    /**
+     * @var integer $statcode
+     *
+     * @ORM\Column(name="statcode", type="integer", nullable=true)
+     */
+    private $statcode;
+
+    /**
+     * @var string $from
+     *
+     * @ORM\Column(name="from", type="string", length=255, nullable=false)
+     */
+    private $from;
+
+    /**
+     * @var Categories
+     *
+     * @ORM\ManyToOne(targetEntity="Categories")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cat_id", referencedColumnName="id")
+     * })
+     */
+    private $cat;
+
+
+}

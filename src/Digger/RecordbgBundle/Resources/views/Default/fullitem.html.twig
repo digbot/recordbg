@@ -1,0 +1,28 @@
+{% extends "DiggerRecordbgBundle::layout.html.twig" %}
+{% block content %}
+<div class="title fs13">
+		<strong>Похвалa:</strong>
+</div>
+<div class="pp10 fs14">
+    <p>
+    {{ item[0].info }}
+    </p>  
+</div>
+<div class="fs13">
+		<strong><i>Коментари:</i></strong>
+</div>
+<div class="pp10 fs14">
+    <ul class="comments">
+      {% for comm in item[0].comments  %}
+      <li>
+        {{ comm.comment }}<span> {{ comm.created|date('Y-m-d h:m') }}<span>
+      </li>
+        {% else %}
+		<li>Няма открити елеменити!</li>
+	  {% endfor %}
+    </ul>     
+</div>
+
+
+{% endblock %}
+

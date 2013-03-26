@@ -1,0 +1,31 @@
+<div class="leftColumn">
+	<div class="title fs13">
+		<b>Категории</b>
+	</div>
+	<ul id="leftMenu" >
+	  {% for k,item  in leftMenu  %}
+		<li><a {% if app.request.getPathInfo() == k %} class="active"  {% endif %} href="{{ url('show_category', { 'catid': k }) }}">{{app.request.get('_locale')}}{{ item |e }}</a></li>
+	  {% else %}
+		<li><em>menu is empty</em></li>
+	  {% endfor %}
+	</ul>
+	<div class="h10"  >&nbsp;</div>
+		<div class="title fs13">
+		<b>Гласувай за нас</b>
+	</div>
+	
+	<div class="p10" style="text-align:center">
+			<div class="leftbanner" rel="nofollow">		
+					</div>
+						<div class="leftbanner" rel="nofollow">		
+						<a href="http://bgtop.net/in.php/1222718814" target="_blank"><img src="{{ asset('/bundles/diggerrecordbg/images/bgtop8831.gif') }}" alt="bgtop.net" border="0"></a>
+					</div>
+			<div class="leftbanner">
+				<a href="http://TopBG.org/">
+					<img src="http://TopBG.org/button.php?u=digger" alt="TopBG.org - ??-??????? ??? ????????." border="0">
+				</a>
+			</div>
+			<div class="leftbanner"><a href="http://bgtopweb.com/" target="_blank"><img src="http://bgtopweb.com/button.php?u=digger" alt="BgTopWeb.com - лУГСО вЗТЛФ ФРУКПЕ border=" 0"=""></a></div>
+			<div class="leftbanner">&nbsp;</div>
+   </div>	
+</div>

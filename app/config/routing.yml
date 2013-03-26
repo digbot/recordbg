@@ -1,0 +1,3 @@
+recordbg_routing:
+    resource: "@DiggerRecordbgBundle/Resources/config/routing.yml"
+

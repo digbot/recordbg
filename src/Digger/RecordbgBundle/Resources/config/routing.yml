@@ -1,0 +1,35 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: DiggerRecordbgBundle:Default:index }
+
+objects_new:
+    pattern:  /new
+    defaults: { _controller: DiggerRecordbgBundle:Default:new }
+
+feedback:
+    pattern:  /feedback
+    defaults: { _controller: DiggerRecordbgBundle:Default:feedback }
+
+_rules:
+    pattern:  /rules
+    defaults: { _controller: DiggerRecordbgBundle:Default:rules }
+
+records:
+    pattern:  /records
+    defaults: { _controller: DiggerRecordbgBundle:Default:records}
+
+rollmodel:
+    pattern:  /rollmodel
+    defaults: { _controller: DiggerRecordbgBundle:Default:rollmodel, catid: 999}
+
+show_fullitem:
+  pattern:  /fullitem/{id}
+  defaults: { _controller: DiggerRecordbgBundle:Default:fullitem,id:0}
+  requirements:
+      id:     \d+
+
+show_category:
+  pattern:  /{catid}/{page}
+  defaults: { _controller: DiggerRecordbgBundle:Default:index, page: 1}
+  requirements:
+      page:     \d+

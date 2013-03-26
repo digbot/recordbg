@@ -1,0 +1,35 @@
+{% extends "DiggerRecordbgBundle::layout.html.twig" %}
+{% block content %}
+	<div class="title fs13">
+		<b>По по най лист ... Последни Похвали </b>
+	</div>
+	
+	<div class="center_list" >
+	<div class="item_list">
+	  
+	  {% for item in pagination  %}
+      {% set obj = item[0] %}
+      	<div class="{{ cycle(['odd', 'even'], loop.index) }} mb10 info_container" >
+		          <a href="{{ url('show_category', { 'catid': item[0].cat.id }) }}"><span>{{ item[0].cat.name }}</span></a>
+                  <div class="statement">{{ item[0].shortinfo | e }}
+				    <a href="{{ url('show_fullitem', { 'id': item[0].id }) }}"><span>..[цялостно].. </span></a>
+					
+                                                                                               
+					<a href="{{ url('show_fullitem', { 'id': item[0].id }) }}">[коментари]({{ item.com_num}})</a>
+					
+				  </div>
+	            </div>
+	  {% else %}
+		<div><em><p class="pp10 fs13">Няма открити елеменити!</p></em></div>
+	  {% endfor %}
+	</div>
+	</div>
+	
+	{# display navigation #}
+	<div class="nav center">
+		{{ pagination.render()|raw }}
+	</div>
+
+
+{% endblock %}
+

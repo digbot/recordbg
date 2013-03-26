@@ -1,0 +1,63 @@
+<?php
+
+namespace Digger\RecordbgBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Digger\RecordbgBundle\Entity\Comments
+ *
+ * @ORM\Table(name="comments")
+ * @ORM\Entity
+ */
+class Comments
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $comment
+     *
+     * @ORM\Column(name="comment", type="text", nullable=true)
+     */
+    private $comment;
+
+    /**
+     * @var \DateTime $created
+     *
+     * @ORM\Column(name="created", type="datetime", nullable=true)
+     */
+    private $created;
+
+    /**
+     * @var string $ip
+     *
+     * @ORM\Column(name="ip", type="string", length=20, nullable=true)
+     */
+    private $ip;
+
+    /**
+     * @var integer $statcode
+     *
+     * @ORM\Column(name="statcode", type="integer", nullable=true)
+     */
+    private $statcode;
+
+    /**
+     * @var Objects
+     *
+     * @ORM\ManyToOne(targetEntity="Objects")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="object_id", referencedColumnName="id")
+     * })
+     */
+    private $object;
+
+
+}

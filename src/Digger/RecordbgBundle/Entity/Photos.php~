@@ -1,0 +1,46 @@
+<?php
+
+namespace Digger\RecordbgBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Digger\RecordbgBundle\Entity\Photos
+ *
+ * @ORM\Table(name="photos")
+ * @ORM\Entity
+ */
+class Photos
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string $filename
+     *
+     * @ORM\Column(name="filename", type="string", length=100, nullable=true)
+     */
+    private $filename;
+
+    /**
+     * @var integer $status
+     *
+     * @ORM\Column(name="status", type="integer", nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var integer $objectId
+     *
+     * @ORM\Column(name="object_id", type="integer", nullable=true)
+     */
+    private $objectId;
+
+
+}

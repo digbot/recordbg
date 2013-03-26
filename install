@@ -1,0 +1,3 @@
+php app/console doctrine:mapping:convert xml ./src/Digger/RecordbgBundle/Resources/config/doctrine/metadata/orm --from-database --force
+php app/console doctrine:mapping:import DiggerRecordbgBundle annotation
+php app/console doctrine:generate:entities DiggerRecordbgBundle

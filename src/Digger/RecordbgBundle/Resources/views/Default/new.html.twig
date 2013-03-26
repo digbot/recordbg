@@ -1,0 +1,79 @@
+{# src/Digger/ObjectsBundle/Resources/views/Default/new.html.twig #}
+
+	<div class="title fs13">
+		<strong>Категории</strong>
+	</div>
+	 
+	<div class="right_from" >
+		{#% form_theme form 'DiggerObjectsBundle:Form:fields.html.twig' %#}
+		{#% form_theme form 'EWZRecaptchaBundle:Form:ewz_recaptcha_widget.html.twig' %#}
+		
+		
+		<form action="{{ path('objects_new') }}" method="post" {{ form_enctype(form) }}>
+			{# form_widget(form) #}
+		
+			{{ form_errors(form) }}
+		<div class="p10">
+			{{ form_label(form.cat,'Категория:') }} <br />
+			{{ form_errors(form.cat) }}
+			{{ form_widget(form.cat, { 'attr': {'class': 'task_field'} }) }}
+		</div>
+		
+		<div  class="p10">
+			{{ form_label(form.info,'Похвала:') }} <br />
+			{{ form_errors(form.info) }}
+			{{ form_widget(form.info, { 'attr': {'class': 'task_field'} }) }}
+		</div>
+		
+		{#
+		<div>
+		{{ form_widget(form.recaptcha, { 'attr': {
+			'options' : {
+				'theme' : 'clean',
+			},
+		} }) }}
+		
+		</div>
+		#}
+		
+		<div  class="p10">
+			{{ form_rest(form) }}
+			<input type="submit" />
+		</form>
+		</div>
+	</div>
+	
+	<br />
+	 
+	<div class="title fs11">
+		<b>Сподели щастието със света!</b>
+	</div>
+	
+	<div  class="box pp10" >
+		<p>С какво ще се похвалиш ? </p>
+			<p>www.recordbg.com е твоето място да споделиш радостта си. </p>
+			<ul>
+				<li>Внезапно сполетяло те щастие!</li>
+				<li>Постигната дългоочаквана цел!</li>
+				<li>Просто искаш да кажеш на всички колко си велик!
+				<li>Сподели радостта, пламтяща в теб!</li>
+				</ul>
+		<p>Изфукай се :)</p> 
+	</div>
+	
+	
+	<div  class="pp10" >
+		<script type="text/javascript"><!--
+			google_ad_client = "pub-3239515341947934";
+			/* 300x250, created 3/27/10 */
+			google_ad_slot = "7860892782";
+			google_ad_width = 300;
+			google_ad_height = 250;
+			//-->
+			</script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+	</div>
+	
+
